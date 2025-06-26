@@ -1,23 +1,29 @@
 import Header from './components/Header.jsx';
 import jobTitles from './components/jobTitle.jsx';
 import JobCard from './components/jobCard.jsx';
+import Filter from './components/filter.jsx';
+import { createContext, useState } from 'react';
+
+export const JobListContext = createContext();
 
 function App() {
-  const jobDisplay = jobTitles;
+
+  const [jobList, setJobList] = useState(jobTitles)
   return (
-    <>
-    <Header/>
-    <main>
-      <div className="job-postings">
-        {
-          jobDisplay.map((job, index) => (
-            <JobCard key={index} job={job} />
-          ))
-        }
-      </div>
-    </main>
-  </>
-  )
+    <JobListContext.Provider value={{jobList, setJobList}}>
+      <Header/>
+      <Filter />
+      <main>
+          <div className="job-postings">
+            {
+              jobList.map((job, index) => (
+                <JobCard key={index} job={job} />
+              ))
+            }
+          </div>
+        </main>
+    </JobListContext.Provider>
+  );
 }
 
 export default App;

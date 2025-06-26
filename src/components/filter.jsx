@@ -8,8 +8,8 @@ const Filter = () => {
 
   function handleIconClick() {
       if(inputRef.current) {
-        const isHidden = inputRef.current.style.display === 'none'
-        inputRef.current.style.display = isHidden ? "block":"none";
+        const isHidden = inputRef.current.style.display === "none" || inputRef.current.style.display === "";
+        inputRef.current.style.display = isHidden ? "block" : "none";
       }
   }
 

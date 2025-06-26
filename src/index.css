@@ -1,0 +1,141 @@
+:root {
+  --header-bg: url(./assets/images/bg-header-mobile.svg);
+  --header-bg-color: rgb(116, 164, 164);
+  --body-bg: hsl(180, 52%, 96%);
+  --primary: hsl(180, 29%, 50%);
+  --secondary: hsl(180, 14%, 20%);
+  --light-secondary:hsl(180, 8%, 52%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--body-bg);
+  font-family: "Open Sans", sans-serif;
+}
+
+.header-background {
+  height: 10rem;
+  background-color: var(--header-bg-color);
+  background-image: var(--header-bg);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 100%;
+}
+
+.job-postings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  gap: 3rem;
+}
+
+.job-container {
+  padding: 3.5rem 2rem;
+  background: #fff;
+  width: min(100%, 120rem);
+  box-shadow: 1px 1px 1rem #cdd3d0e6;
+  border-radius: .5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-styling {
+  position: absolute;
+  content: " ";
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: .7rem;
+  height: 100%;
+  background-color:var(--primary);
+}
+
+.description, .job-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.class {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.class p {
+  font-weight: bold;
+}
+
+.class p:first-child {
+  color: var(--primary);
+  margin-left: 0;
+}
+
+.class p:nth-child(2), .class p:nth-child(3) {
+  background-color: var(--primary);
+  color: #fff;
+  padding: .5rem .8rem;
+  border-radius: 3rem;
+}
+
+.class p:nth-child(3) {
+  background-color:var(--secondary);
+}
+
+.job-title {
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.job-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--light-secondary);
+  padding-bottom: 1rem;
+}
+
+.job-skills {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.job-skills p {
+  background: var(--body-bg);
+  color: var(--primary);
+  font-weight: bold;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+
+  .header-background {
+    background-image: url(./assets/images/bg-header-desktop.svg);
+    background-size: 100%;
+  }
+  .horizontal {
+    display: none;
+  }
+
+  .job-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5rem;
+  }
+}

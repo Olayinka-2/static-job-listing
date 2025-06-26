@@ -30,7 +30,7 @@ const Filter = () => {
     <>
       <div className="filter">
         <form action="#">
-          <input type="search" name="title" ref={inputRef} onChange={handleInputChange}/>
+          <input type="search" name="title" ref={inputRef} onChange={handleInputChange} placeholder="search by Job Title"/>
           <i className="bi bi-funnel-fill" onClick={handleIconClick}></i>
         </form>
       </div>

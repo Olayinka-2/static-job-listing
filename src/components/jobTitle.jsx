@@ -66,7 +66,7 @@ const jobTitles = [
   {
     id: 9,
     title: "Full Stack Engineer",
-    name: "Eyecam Co.e",
+    name: "Eyecam Co",
     isNew: true,
     isFeatured: true,
     skills: ["Fullstack", "Midweight", "Python", "JavaScript", "Django"]

@@ -1,7 +1,21 @@
+import { motion } from 'framer-motion';
+
 function JobCard({ job }) {
+  const logoSrc = new URL(`../assets/images/${job.name.toLowerCase().split(" ").join("-")}.svg`, import.meta.url).href;
   return (
-    <div className="job-container">
+    <motion.div
+    className="job-container"
+    initial={{ opacity: 0, x: -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.2}}
+  >
       <div className="post-styling"></div>
+
+      <div className="profile">
+      <div className="img">
+        <img src={logoSrc} alt="" />
+      </div>
 
       <div className="description">
         <div className="class">
@@ -22,13 +36,14 @@ function JobCard({ job }) {
 
         <hr className="horizontal" />
       </div>
+      </div>
 
       <div className="job-skills">
         {job.skills.map((skill, index) => (
           <p className="skills" key={index}>{skill}</p>
         ))}
       </div>
-    </div>
+  </motion.div>
   );
 }
 

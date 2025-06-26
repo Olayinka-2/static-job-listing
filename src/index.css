@@ -23,11 +23,25 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.profile {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.profile img {
+  width: 100%;
+}
+
+.img {
+  flex-shrink: 1;
+  min-width: 5rem;
+}
 .no-results {
   color: var(--primary);
   font-weight: bold;
   font-size: 3rem;
-  
+
 }
 .header-background {
   height: 10rem;
@@ -146,6 +160,7 @@ body {
   font-size: 3rem;
   transition: transform 0.2s ease;
   color: var(--header-bg-color);
+  cursor: pointer;
 }
 
 .filter i:active {
@@ -153,7 +168,7 @@ body {
 }
 
 .filter input {
-  display: none;
+  outline: none;
   border: none;
   padding: 1rem;
   font-size: 1.6rem;
@@ -188,4 +203,11 @@ body {
     align-items: flex-start;
     gap: 5rem;
   }
+}
+
+@media screen and (max-width: 400px) {
+
+.job-postings {
+  padding: 1.5rem;
+}
 }

@@ -14,14 +14,16 @@ function App() {
       <Header/>
       <Filter />
       <main>
-          <div className="job-postings">
-            {
-              jobList.map((job, index) => (
-                <JobCard key={index} job={job} />
-              ))
-            }
-          </div>
-        </main>
+        <div className="job-postings">
+          {jobList.length === 0 ? (
+            <p className="no-results">No job found.</p>
+          ) : (
+            jobList.map((job, index) => (
+              <JobCard key={index} job={job} />
+            ))
+          )}
+        </div>
+      </main>
     </JobListContext.Provider>
   );
 }

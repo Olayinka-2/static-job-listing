@@ -23,6 +23,12 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.no-results {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 3rem;
+  
+}
 .header-background {
   height: 10rem;
   background-color: var(--header-bg-color);
